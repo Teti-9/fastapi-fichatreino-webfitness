@@ -1,0 +1,10 @@
+__init__.py
+uvicorn.exe
+workoutgen.db-journal
+schemas_estudo.py
+rotas_estudo.py
+repositorio_estudo.py
+models_estudo.py
+database_estudo.py
+treino.html
+treino.pdf

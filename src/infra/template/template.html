@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample PDF</title>
+</head>
+
+<body>
+    <h1>Ficha</h1>
+    <div id="treino">
+        {% for day, muscle_groups in data.items() %}
+        <h2>Treino: {{ day }}</h2>
+        {% set order = ordem[day] %}
+        {% for muscle in order %}
+        {% if muscle.capitalize() in muscle_groups %}
+        <h3>{{ muscle.capitalize() }}</h3>
+        <ul>
+            {% for exercise in muscle_groups[muscle.capitalize()] %}
+            <li>{{ exercise.nome.title() }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+    </div>
+    <p>O treino gerado neste pdf pode conter erros e não ser o mais otimizado possível, certifique-se de corrigi-lo caso
+        necessário.</p>
+</body>
+
+</html>
